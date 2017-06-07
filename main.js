@@ -11,21 +11,23 @@ var total = sports.push('football', 'swimming');
 // 2.
 // Using the `strings` array, wrte a function `longestString()`
 // that accepts an array argument and returns the longest string in the array
-var strings = ['this','is','a','collection','of','words'];
-
-var lnth = 0;
-var longest;
-function longestString(){
-  for (var i = 0; i < strings.length; i++){
-    if (strings[i].length > lnth){
-      var lnth = strings[i].length;
-      longest = strings[i];
-    }
-  }
-}
-
-
-console.assert(longestString(strings) === 'collection', {"message": "longestString should return 'collection'"});
+// var strings = ['this','is','a','collection','of','words'];
+//
+// var lnth = 0;
+// var longest;
+// function longestString(array){
+//   for (var i = 0; i < array.length; i++){
+//     if (array[i].length > lnth){
+//       lnth = array[i].length;
+//       longest = array[i];
+//     }
+//   } console.log(longest);
+// return longest;
+// }
+//
+//
+//
+// console.assert(longestString(strings) === 'collection', {"message": "longestString should return 'collection'"});
 
 
 // Use the `numbers` array for questions 3 - 8.
@@ -36,14 +38,19 @@ var numbers = [1,12,4,18,9,7,11,3,101,5,6];
 // Write a function `smallestNumber()` that accepts an array
 // and returns the smallest number in the array.
 // A:
+// var smll = 0;
 
-var smallNum = numbers[0];
-  for (var i = 0; i < numbers.length; i++) {
-    if ( numbers[i] < smallNum){
-    smallNum = numbers[i];
-  }
+function smallestNumber(array) {
+  var smallNum = array[0];
+  for (var i = 0; i < array.length; i++) {
+    if ( array[i] < smallNum){
+    smallNum = array[i];
+    // smll = array[i].length;
+  }console.log(smallNum);
+  }return smallNum;
+
 }
-console.log(smallNum);
+
 console.assert(smallestNumber(numbers) === 1, {"message": "smallestNumber should return 1"});
 
 
@@ -52,7 +59,15 @@ console.assert(smallestNumber(numbers) === 1, {"message": "smallestNumber should
 // and returns only the even numbers in the array.
 // A:
 
+var getEvens = function(array) {
+  var evens = [];
+  for (var i = 0; i < array.length; i++) {
+    if (array[i] % 2 === 0){
+    evens.push(array[i]);
+  }
+}return evens;
 
+};
 console.assert(getEvens(numbers).toString() === '12,4,18,6', {'message': 'getEvens should return "12,4,18,6"'});
 
 
@@ -63,6 +78,12 @@ console.assert(getEvens(numbers).toString() === '12,4,18,6', {'message': 'getEve
 // and decrement the iterator to zero
 // A:
 
+function arrayReverser(array) {
+  var two = [];
+  two = array.reverse().join();
+  console.log(two);
+  return two;
+}
 
 console.assert(arrayReverser(numbers).toString() === '6,5,101,3,11,7,9,18,4,12,1', {'message': 'arrayReverser should return "6,5,101,3,11,7,9,18,4,12,1"'});
 
@@ -73,7 +94,12 @@ var numbers = [1,12,4,18,9,7,11,3,101,5,6];
 // and returns the sum of all of the numbers in the array
 // A:
 
-
+function sumArrayOfNumbers(array){
+  var results = 0;
+  for (var i = 0; i<array.length; i++)
+  results += array[i];
+  return results;
+}
 console.assert(sumArrayOfNumbers(numbers) === 177, {'message': 'sumArrayOfNumbers should return 177'});
 
 
@@ -81,7 +107,16 @@ console.assert(sumArrayOfNumbers(numbers) === 177, {'message': 'sumArrayOfNumber
 // Write a function that accepts an array argument
 // and returns an array of only the numbers greater than 10
 // A:
+function numbersOver10(array){
+  var greater = [];
+  for (var i = 0; i<array.length; i++){
+    if (array[i] > 10) {
+      greater = array[i];
+      console.log(greater);
 
+    }
+  }
+}
 
 console.assert(numbersOver10(numbers).toString() === "12,18,11,101", {'message': 'numbersOver10 should return "12,18,11,101"'});
 
