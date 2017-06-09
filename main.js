@@ -11,23 +11,23 @@ var total = sports.push('football', 'swimming');
 // 2.
 // Using the `strings` array, wrte a function `longestString()`
 // that accepts an array argument and returns the longest string in the array
-// var strings = ['this','is','a','collection','of','words'];
-//
-// var lnth = 0;
-// var longest;
-// function longestString(array){
-//   for (var i = 0; i < array.length; i++){
-//     if (array[i].length > lnth){
-//       lnth = array[i].length;
-//       longest = array[i];
-//     }
-//   } console.log(longest);
-// return longest;
-// }
-//
-//
-//
-// console.assert(longestString(strings) === 'collection', {"message": "longestString should return 'collection'"});
+var strings = ['this','is','a','collection','of','words'];
+
+var lnth = 0;
+var longest;
+function longestString(array){
+  for (var i = 0; i < array.length; i++){
+    if (array[i].length > lnth){
+      lnth = array[i].length;
+      longest = array[i];
+    }
+  } console.log(longest);
+return longest;
+}
+
+
+
+console.assert(longestString(strings) === 'collection', {"message": "longestString should return 'collection'"});
 
 
 // Use the `numbers` array for questions 3 - 8.
@@ -98,6 +98,7 @@ function sumArrayOfNumbers(array){
   var results = 0;
   for (var i = 0; i<array.length; i++)
   results += array[i];
+
   return results;
 }
 console.assert(sumArrayOfNumbers(numbers) === 177, {'message': 'sumArrayOfNumbers should return 177'});
@@ -107,15 +108,16 @@ console.assert(sumArrayOfNumbers(numbers) === 177, {'message': 'sumArrayOfNumber
 // Write a function that accepts an array argument
 // and returns an array of only the numbers greater than 10
 // A:
-function numbersOver10(array){
-  var greater = [];
-  for (var i = 0; i<array.length; i++){
-    if (array[i] > 10) {
-      greater = array[i];
-      console.log(greater);
+var numbers = [1,12,4,18,9,7,11,3,101,5,6];
 
-    }
-  }
+function numbersOver10(array) {
+  var greaterThan =[];
+  for (var i = 0; i < array.length; i++) {
+    if (array[i] > 10) {
+      greaterThan.push(array[i]);
+}
+}
+return greaterThan;
 }
 
 console.assert(numbersOver10(numbers).toString() === "12,18,11,101", {'message': 'numbersOver10 should return "12,18,11,101"'});
@@ -125,6 +127,16 @@ console.assert(numbersOver10(numbers).toString() === "12,18,11,101", {'message':
 // Write a function that accepts both an array and number argument
 // and returns an array of only the numbers greater than the number passed to the function
 // A:
+function numbersOverX(array, number) {
+  var topArray = [];
+  for (var i = 0; i < array.length; i++) {
+    if (array[i] > number) {
+      topArray.push(array[i]);
+
+    }
+  }
+  return topArray;
+}
 
 
 console.assert(numbersOverX(numbers, 15).toString() === "18,101", {'message': 'numbersOverX should return "18,101"'});
@@ -137,6 +149,17 @@ var numbers = [1,12,4,18,9,7,11,3,101,5,6];
 var numbersTwo = [33,56,72,2,5,66,90,21,42];
 // A:
 
+function joinArrays (array){
+  var stickArray = [];
+
+  for (var i = 0; i < array.length; i++) {
+    for (var m = 0; m < array[i].length; m++) {
+      stickArray.push(array[i][m]);
+    }
+  }
+  return stickArray;
+}
+// console.log(joinArrays([numbers, numbersTwo]));
 
 console.assert(joinArrays([numbers, numbersTwo]).toString() === '1,12,4,18,9,7,11,3,101,5,6,33,56,72,2,5,66,90,21,42', {'message': 'joinArrays should return "1,12,4,18,9,7,11,3,101,5,6,33,56,72,2,5,66,90,21,42"'});
 
@@ -158,10 +181,10 @@ var instructorNameDiscipline = instructors[5];
 // greenvIlleInstructor = ['Will','JavaScript']
 
 var instructorOne = instructors[4][0];
-// instructorOne = ['Dan','JavaScript']['JD','JavaScript']
+// instructorOne = Dan
 
 var instructorTwo = instructors[0][1];
-// instructorTwo = <your answer>['JD','JavaScript']['Tim','JavaScript']
+// instructorTwo = <your answer> JavaScript
 
 var instructorThree = instructors[2][0];
-// instructorThree = ['Brit','Ruby'] ['JD','JavaScript']
+// instructorThree = Brit
